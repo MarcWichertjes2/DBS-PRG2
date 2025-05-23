@@ -37,3 +37,55 @@ END;
 //
 DELIMITER ;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---- updatelog test tabel
+CREATE TABLE user_update_logs (
+    log_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    voornaam VARCHAR(100) NOT NULL,
+    achternaam VARCHAR(100) NOT NULL,
+    old_nummer VARCHAR(50) NOT NULL,
+    new_nummer VARCHAR(50) NOT NULL,
+    changed_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+--- trigggeeeeeeeerrrrrr
+DELIMITER //
+
+CREATE TRIGGER after_user_update_number
+AFTER UPDATE ON users
+FOR EACH ROW
+BEGIN
+    IF OLD.nummer <> NEW.nummer THEN
+        INSERT INTO user_update_logs (user_id, voornaam, achternaam, old_nummer, new_nummer)
+        VALUES (NEW.id, NEW.voornaam, NEW.achternaam, OLD.nummer, NEW.nummer);
+    END IF;
+END;
+//
+
+DELIMITER ;
