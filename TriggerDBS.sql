@@ -40,7 +40,7 @@ CREATE TABLE `spelers` (
 
 LOCK TABLES `spelers` WRITE;
 /*!40000 ALTER TABLE `spelers` DISABLE KEYS */;
-INSERT INTO `spelers` VALUES (1,1,10,'Liam','Jansen'),(2,1,10,'Ema','Vermeer'),(3,2,9,'Noah','De Vries'),(4,2,4,'Sophie','Bakker'),(5,3,11,'Daan','Peeters'),(6,3,6,'Mila','Hendriks'),(7,4,8,'Finn','Vos'),(8,4,5,'Lotte','Kuipers'),(9,5,3,'Ties','Van Dijk'),(10,5,1,'Isa','De Boer'),(11,3,10,'Marc','Wichertjes');
+INSERT INTO `spelers` VALUES (1,1,10,'Jan','Jansen'),(2,1,10,'Ema','Vermeer'),(3,2,9,'Noah','De Vries'),(4,2,4,'Sophie','Bakker'),(5,3,11,'Daan','Peeters'),(6,3,6,'Mila','Hendriks'),(7,4,8,'Finn','Vos'),(8,4,5,'Lotte','Kuipers'),(9,5,3,'Ties','Van Dijk'),(10,5,1,'Isa','De Boer'),(11,3,10,'Marc','Wichertjes');
 /*!40000 ALTER TABLE `spelers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
